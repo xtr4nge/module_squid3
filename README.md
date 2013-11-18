@@ -6,7 +6,7 @@ FruityWifi squid3 module.
 This module can also be used to inject code into javascript files.
 
 
-This module is based on the document: 
+Based on the document: 
 Owning Bad Guys {& Mafia} with JavaScript Botnets (by Chema Alonso (@chemaalonso) and Manuel Fernandez)
 
 

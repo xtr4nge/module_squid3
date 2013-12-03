@@ -139,7 +139,11 @@ if ($install == "install_squid3") {
     exit;
 }
 
-//header('Location: ../index.php?tab=0');
-header('Location: ../../action.php?page=squid3');
+if ($page == "status") {
+    header('Location: ../../../action.php');
+} else {
+    header('Location: ../../action.php?page=squid3');
+}
+//header('Location: ../../action.php?page=squid3');
 
 ?>

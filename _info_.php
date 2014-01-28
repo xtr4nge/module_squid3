@@ -10,6 +10,7 @@ $mod_isup="ps auxww | grep squid3 | grep -v -e 'grep squid3'";
 $mod_alias="Squid3";
 # EXEC
 $bin_danger = "/usr/share/FruityWifi/bin/danger";
+$bin_sudo = "/usr/bin/sudo";
 $bin_squid3 = "/usr/sbin/squid3";
 $bin_killall = "/usr/bin/killall";
 $bin_iptables = "/sbin/iptables";

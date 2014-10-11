@@ -1,6 +1,6 @@
 <? 
 /*
-	Copyright (C) 2013  xtr4nge [_AT_] gmail.com
+	Copyright (C) 2013-2014  xtr4nge [_AT_] gmail.com
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -45,6 +45,7 @@ $(function() {
 <?
 
 include "../../config/config.php";
+include "../../login_check.php";
 include "../../functions.php";
 include "_info_.php";
 
@@ -149,6 +150,7 @@ Loading, please wait...
             <li><a href="#result-1">Output</a></li>
             <li><a href="#result-2">Lists</a></li>
             <li><a href="#result-3">History</a></li>
+			<li><a href="#result-4">About</a></li>
         </ul>
         <div id="result-1">
             <form id="formLogs-Refresh" name="formLogs-Refresh" method="POST" autocomplete="off" action="index.php">
@@ -203,7 +205,7 @@ Loading, please wait...
             
         <table border=0 cellspacing=0 cellpadding=0>
             <tr>
-            <td>
+            <td class="general">
                 Template
             </td>
             <td>
@@ -228,7 +230,7 @@ Loading, please wait...
             </form>
             </td>
             <tr>
-            <td style="padding-right:10px">
+            <td class="general" style="padding-right:10px">
                 Add/Rename
             </td>
             <td>
@@ -317,6 +319,16 @@ Loading, please wait...
             ?>
             
         </div>
+		
+		<!-- END HISTORY -->
+		
+		<!-- ABOUT -->
+
+        <div id="result-4" class="history">
+			<? include "includes/about.php"; ?>
+		</div>
+		
+		<!-- END ABOUT -->
         
     </div>
 

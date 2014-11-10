@@ -1,19 +1,19 @@
 <? 
 /*
-	Copyright (C) 2013-2014  xtr4nge [_AT_] gmail.com
+    Copyright (C) 2013-2014 xtr4nge [_AT_] gmail.com
 
-	This program is free software: you can redistribute it and/or modify
-	it under the terms of the GNU General Public License as published by
-	the Free Software Foundation, either version 3 of the License, or
-	(at your option) any later version.
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-	You should have received a copy of the GNU General Public License
-	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */ 
 ?>
 <!DOCTYPE HTML>
@@ -45,7 +45,6 @@ $(function() {
 <?
 
 include "../../config/config.php";
-include "../../login_check.php";
 include "../../functions.php";
 include "_info_.php";
 
@@ -150,7 +149,6 @@ Loading, please wait...
             <li><a href="#result-1">Output</a></li>
             <li><a href="#result-2">Lists</a></li>
             <li><a href="#result-3">History</a></li>
-			<li><a href="#result-4">About</a></li>
         </ul>
         <div id="result-1">
             <form id="formLogs-Refresh" name="formLogs-Refresh" method="POST" autocomplete="off" action="index.php">
@@ -205,7 +203,7 @@ Loading, please wait...
             
         <table border=0 cellspacing=0 cellpadding=0>
             <tr>
-            <td class="general">
+            <td>
                 Template
             </td>
             <td>
@@ -230,7 +228,7 @@ Loading, please wait...
             </form>
             </td>
             <tr>
-            <td class="general" style="padding-right:10px">
+            <td style="padding-right:10px">
                 Add/Rename
             </td>
             <td>
@@ -301,7 +299,7 @@ Loading, please wait...
 
         <!-- END LISTS -->
 
-        <div id="result-3">
+        <div id="result-3" class="history">
             <input type="submit" value="refresh">
             <br><br>
             
@@ -319,16 +317,6 @@ Loading, please wait...
             ?>
             
         </div>
-		
-		<!-- END HISTORY -->
-		
-		<!-- ABOUT -->
-
-        <div id="result-4" class="history">
-			<? include "includes/about.php"; ?>
-		</div>
-		
-		<!-- END ABOUT -->
         
     </div>
 

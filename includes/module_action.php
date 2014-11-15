@@ -65,7 +65,7 @@ if($service == "squid3") {
         //$exec = "$bin_squid3 -f /usr/share/FruityWifi/conf/squid.conf &";
         $exec = "$bin_squid3 -f $mod_path/includes/squid.conf &";
         exec("$bin_danger \"$exec\"" );
-        $exec = "$bin_iptables -t nat -A PREROUTING -i $iface_wifi -p tcp --dport 80 -j REDIRECT --to-port 3128";
+        $exec = "$bin_iptables -t nat -A PREROUTING -i $io_action -p tcp --dport 80 -j REDIRECT --to-port 3128";
         exec("$bin_danger \"$exec\"" );
     } else if($action == "stop") {
         
@@ -83,7 +83,7 @@ if($service == "squid3") {
         exec("$bin_danger \"$exec\"" );
         $exec = "/etc/init.d/squid3 stop";
         exec("$bin_danger \"$exec\"" );
-        $exec = "$bin_iptables -t nat -D PREROUTING -i $iface_wifi -p tcp --dport 80 -j REDIRECT --to-port 3128";
+        $exec = "$bin_iptables -t nat -D PREROUTING -i $io_action -p tcp --dport 80 -j REDIRECT --to-port 3128";
         exec("$bin_danger \"$exec\"" );
     }
 }
@@ -106,10 +106,10 @@ if($service == "url_rewrite") {
 
 if($service == "iptables") {
     if ($action == "start") {
-        $exec = "$bin_iptables -t nat -A PREROUTING -i $iface_wifi -p tcp --dport 80 -j REDIRECT --to-port 3128";
+        $exec = "$bin_iptables -t nat -A PREROUTING -i $io_action -p tcp --dport 80 -j REDIRECT --to-port 3128";
         exec("$bin_danger \"$exec\"" );
     } else if($action == "stop") {
-        $exec = "$bin_iptables -t nat -D PREROUTING -i $iface_wifi -p tcp --dport 80 -j REDIRECT --to-port 3128";
+        $exec = "$bin_iptables -t nat -D PREROUTING -i $io_action -p tcp --dport 80 -j REDIRECT --to-port 3128";
         exec("$bin_danger \"$exec\"" );
     }
     header('Location: ../index.php');

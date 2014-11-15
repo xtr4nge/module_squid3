@@ -1,6 +1,6 @@
 <?
 $mod_name="squid3";
-$mod_version="1.1";
+$mod_version="1.2";
 $mod_path="/usr/share/FruityWifi/www/modules/squid3";
 $mod_logs="/usr/share/FruityWifi/logs/squid3.log"; 
 $mod_logs_history="/usr/share/FruityWifi/www/modules/squid3/includes/logs/";

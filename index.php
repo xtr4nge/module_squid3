@@ -43,14 +43,14 @@ $(function() {
 <br>
 
 <?
-
 include "../../config/config.php";
-include "../../functions.php";
 include "_info_.php";
+include "../../login_check.php";
+include "../../functions.php";
 
 // Checking POST & GET variables...
 if ($regex == 1) {
-	regex_standard($_POST["newdata"], "msg.php", $regex_extra);
+    regex_standard($_POST["newdata"], "msg.php", $regex_extra);
     regex_standard($_GET["logfile"], "msg.php", $regex_extra);
     regex_standard($_GET["action"], "msg.php", $regex_extra);
     regex_standard($_POST["service"], "msg.php", $regex_extra);
@@ -65,7 +65,8 @@ $service = $_POST["service"];
 // DELETE LOG
 if ($logfile != "" and $action == "delete") {
     $exec = "$bin_rm ".$mod_logs_history.$logfile.".log";
-    exec("$bin_danger \"$exec\"", $dump);
+    //exec("$bin_danger \"$exec\"", $dump); //DEPRECATED
+    exec_fruitywifi($exec);
 }
 
 ?>
@@ -94,7 +95,8 @@ if ($logfile != "" and $action == "delete") {
     
     <?
     $exec = "$bin_iptables -nvL -t nat |grep -E 'REDIRECT.+3128'";
-    $isiptablesup = exec("$bin_danger \"$exec\"" );
+    //$isiptablesup = exec("$bin_danger \"$exec\"" ); //DEPRECATED
+    $isiptablesup = exec_fruitywifi($exec);
     if ($isiptablesup != "") { 
         echo "&nbsp;Iptables  <font color=\"lime\"><b>enabled</b></font>.&nbsp; | <a href=\"includes/module_action.php?service=iptables&action=stop\"><b>stop</b></a><br />";
     } else { 

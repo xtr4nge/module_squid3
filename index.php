@@ -97,7 +97,7 @@ if ($logfile != "" and $action == "delete") {
     $exec = "$bin_iptables -nvL -t nat |grep -E 'REDIRECT.+3128'";
     //$isiptablesup = exec("$bin_danger \"$exec\"" ); //DEPRECATED
     $isiptablesup = exec_fruitywifi($exec);
-    if ($isiptablesup != "") { 
+    if ($isiptablesup[0] != "") { 
         echo "&nbsp;Iptables  <font color=\"lime\"><b>enabled</b></font>.&nbsp; | <a href=\"includes/module_action.php?service=iptables&action=stop\"><b>stop</b></a><br />";
     } else { 
         echo "&nbsp;Iptables  <font color=\"red\"><b>disabled</b></font>. | <a href=\"includes/module_action.php?service=iptables&action=start\"><b>start</b></a><br />";

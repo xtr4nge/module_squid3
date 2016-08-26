@@ -1,6 +1,24 @@
+<? 
+/*
+    Copyright (C) 2013-2016 xtr4nge [_AT_] gmail.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/ 
+?>
 <?
 
-//include "../login_check.php";
+include "../../../login_check.php";
 include "../../../config/config.php";
 include "../_info_.php";
 include "../../../functions.php";
@@ -33,10 +51,11 @@ if ($type == "templates") {
 		
 		if ($tempname != "0") {
 			// SAVE TAMPLATE
-			if ($newdata != "") { $newdata = ereg_replace(13,  "", $newdata);
+			if ($newdata != "") {
+				//$newdata = ereg_replace(13,  "", $newdata); // DEPRECATED
+				$newdata = preg_replace("/[\n\r]/",  "", $newdata);
 				$template_path = "$mod_path/includes/templates";
         		$exec = "/bin/echo '$newdata' | base64 --decode > $template_path/$tempname";
-        		//exec("/usr/share/FruityWifi/bin/danger \"" . $exec . "\"", $output); //DEPRECATED
                 $output = exec_fruitywifi($exec);
     		}
     	}
@@ -48,7 +67,6 @@ if ($type == "templates") {
 			if ($new_rename_file != "") {
 				$template_path = "$mod_path/includes/templates";
 				$exec = "/bin/touch $template_path/$new_rename_file";
-				//exec("/usr/share/FruityWifi/bin/danger \"" . $exec . "\"", $output); //DEPRECATED
                 $output = exec_fruitywifi($exec);
 
 				$tempname=$new_rename_file;
@@ -57,7 +75,6 @@ if ($type == "templates") {
 			//RENAME TEMPLATE
 			$template_path = "$mod_path/includes/templates";
 			$exec = "/bin/mv $template_path/$new_rename $template_path/$new_rename_file";
-			//exec("/usr/share/FruityWifi/bin/danger \"" . $exec . "\"", $output); //DEPRECATED
             $output = exec_fruitywifi($exec);
 
 			$tempname=$new_rename_file;
@@ -68,7 +85,6 @@ if ($type == "templates") {
 			//DELETE TEMPLATE
 			$template_path = "$mod_path/includes/templates";
 			$exec = "/bin/rm $template_path/$new_rename";
-			//exec("/usr/share/FruityWifi/bin/danger \"" . $exec . "\"", $output); //DEPRECATED
             $output = exec_fruitywifi($exec);
 		}
 	}

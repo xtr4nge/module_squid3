@@ -1,7 +1,7 @@
 module_squid3
 =============
 
-FruityWifi squid3 module.
+FruityWiFi squid3 module.
 
 This module can also be used to inject code into javascript files.
 
@@ -17,6 +17,10 @@ http://media.blackhat.com/bh-us-12/Briefings/Alonso/BH_US_12_Alonso_Owning_Bad_G
 <br>
 http://media.blackhat.com/bh-us-12/Briefings/Alonso/BH_US_12_Alonso_Owning_Bad_Guys_Slides.pdf
 
+
+v1.4
+---------------------------------
+- PHP7 compatibility issues has been fixed
 
 
 v1.0
